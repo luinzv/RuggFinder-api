@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './HomeForm.module.css';
 import peticon from '../../assets/petqr-icon.png';
 import { Link } from 'react-router-dom';
@@ -17,7 +16,7 @@ export const HomeForm = () => {
       <div className={styles.loginSection}>
         <div className={styles.formWrapper}>
           <Link to="/register" className={styles.signEmail}>Registrarse con correo</Link>
-          <a href="#" className={styles.login}>Iniciar sesión</a>
+          <Link to="/login" className={styles.login}>Iniciar sesión</Link>
           <a href="#" className={styles.policy}>Políticas de privacidad</a>
         </div>
       </div>
