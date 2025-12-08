@@ -1,85 +1,74 @@
-/* ========== RESET GLOBAL ========== */
+@font-face {
+  font-family: 'SFPRO';
+  src: url('./fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SFPRO';
+  src: url('./fonts/SFPRODISPLAYMEDIUM.OTF') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SFPRO';
+  src: url('./fonts/sf-pro-display-semibold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SFPRO';
+  src: url('./fonts/SFPRODISPLAYBOLD.OTF') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
 
-/* Usa box-sizing moderno en toda la app */
+/* Reset / base */
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-/* Elimina márgenes y padding por defecto */
-html,
-body {
+html, body, #root {
+  height: 100%;      
   margin: 0;
   padding: 0;
 }
 
-/* Quita estilos por defecto de texto */
 body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-figure,
-blockquote,
-dl,
-dd {
+h1,h2,h3,h4,h5,h6,
+p,figure,blockquote,dl,dd {
   margin: 0;
 }
 
-/* Quita las listas con viñetas */
-ul,
-ol {
+ul,ol {
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-/* Links sin decoración */
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* Imágenes responsivas */
-img,
-picture,
-video,
-canvas,
-svg {
+img, picture, video, canvas, svg {
   max-width: 100%;
   display: block;
 }
 
-/* Inputs y botones sin estilos por defecto */
-button,
-input,
-textarea,
-select {
+button, input, textarea, select {
   font: inherit;
   border: none;
   background: none;
   outline: none;
 }
 
-/* Asegura que tu app use mínimo full height */
-html,
 body {
-  height: 100%;
-}
-
-/* Fuente base */
-body {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  background-color: #f5f5f5; /* Cambialo si quieres dark mode */
+  font-family: SFPRO, Avenir, Helvetica, Arial, sans-serif;
+  background-color: #f5f5f5;
   color: #222;
   -webkit-font-smoothing: antialiased;
 }
 
-/* Root base */
-#root {
-  min-height: 100%;
-}
