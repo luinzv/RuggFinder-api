@@ -30,7 +30,7 @@
 
 
 .pugIconContainer {
-    width: 37%;
+    width: 43%;
     height: auto;
     position: absolute;
     top: -10%;
@@ -131,8 +131,8 @@ input[type="text"]:focus {
 
 .privacyContent img {
     position: absolute;
-    top: 53%;
-    left: 54%;
+    top: 14px;
+    left: 104px;
     width: 21px;
 }
 
