@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './RegisterForm.module.css';
 import { pugqrIcon, userIcon, mailIcon, passwordIcon, checkboxIcon, petqrIcon } from '../../assets/icon';
 
@@ -7,7 +7,7 @@ export const RegisterForm = () => {
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
     const [nombre, setNombre] = useState('');
-    const [error, setError] = useState('');
+    const [, setError] = useState('');
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
@@ -48,7 +48,9 @@ export const RegisterForm = () => {
     return (
         <div className={styles.Header}>
             <div className={styles.navbarContainer}>
-                <div className={styles.navbarMenu}></div>
+                <div className={styles.navbarMenu}>
+                    
+                </div>
             </div>
             <div className={styles.ContainerGridForm}>
                 <div className={styles.FormContainer}>
