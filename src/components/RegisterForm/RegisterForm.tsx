@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styles from './RegisterForm.module.css';
-import { pugqrIcon, userIcon, mailIcon, passwordIcon, checkboxIcon } from '../../assets/icon';
+import { pugqrIcon, userIcon, mailIcon, passwordIcon, checkboxIcon, petqrIcon } from '../../assets/icon';
 
 export const RegisterForm = () => {
     const [email, setEmail] = useState('');
@@ -47,56 +47,69 @@ export const RegisterForm = () => {
 
     return (
         <div className={styles.Header}>
-            <div className={styles.FormContainer}>
-                <div className={styles.pugIconContainer}>
-                    <img src={pugqrIcon} alt="pugicon" className={styles.pugIcon} />
+            <div className={styles.navbarContainer}>
+                <div className={styles.navbarMenu}></div>
+            </div>
+            <div className={styles.ContainerGridForm}>
+                <div className={styles.FormContainer}>
+                    <div className={styles.pugIconContainer}>
+                        <img src={pugqrIcon} alt="pugicon" className={styles.pugIcon} />
+                    </div>
+                    <div className={styles.title}>Registrate con tus datos</div>
+                    <div className={styles.formRegister}>
+                        <form action="" className={styles.formInputs} onSubmit={handleSubmit}>
+                            <div className={styles.inputContainer}>
+                                <input
+                                    type="text"
+                                    placeholder='Usuario'
+                                    onChange={(e) => setNombre(e.target.value)}
+                                />
+                                <img src={userIcon} alt="userIcon" className={styles.userIcon} />
+                            </div>
+                            <div className={styles.inputContainer}>
+                                <input
+                                    type="email"
+                                    placeholder='Correo Electronico'
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                                <img src={mailIcon} alt="mailIcon" className={styles.userIcon} />
+                            </div>
+                            <div className={styles.inputContainer}>
+                                <input
+                                    type="password"
+                                    placeholder='Contraseña'
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
+                                <img src={passwordIcon} alt="passwordIcon" className={styles.passwordIcon} />
+                            </div>
+                            <div className={styles.inputContainer}>
+                                <input
+                                    type="password"
+                                    placeholder='Repetir Contraseña'
+                                    onChange={(e) => setConfirmPassword(e.target.value)}
+                                />
+                                <img src={passwordIcon} alt="passwordIcon" className={styles.passwordIcon} />
+                            </div>
+
+
+                            <div className={styles.privacyContent}>
+                                <h3 className={styles.privacyText}>
+                                    Acepto los Términos y Condiciones y la Política de Privacidad
+                                </h3>
+                                <img src={checkboxIcon} alt="checkboxIcon" />
+                            </div>
+
+                            <button type="submit" className={styles.buttonSubmit}>Registrar</button>
+                        </form>
+                    </div>
                 </div>
-                <div className={styles.title}>Registrate con tus datos</div>
-                <div className={styles.formRegister}>
-                    <form action="" className={styles.formInputs} onSubmit={handleSubmit}>
-                        <div className={styles.inputContainer}>
-                            <input
-                                type="text"
-                                placeholder='Usuario'
-                                onChange={(e) => setNombre(e.target.value)}
-                            />
-                            <img src={userIcon} alt="userIcon" className={styles.userIcon} />
-                        </div>
-                        <div className={styles.inputContainer}>
-                            <input
-                                type="email"
-                                placeholder='Correo Electronico'
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                            <img src={mailIcon} alt="mailIcon" className={styles.userIcon} />
-                        </div>
-                        <div className={styles.inputContainer}>
-                            <input
-                                type="password"
-                                placeholder='Contraseña'
-                                onChange={(e) => setPassword(e.target.value)}
-                            />
-                            <img src={passwordIcon} alt="passwordIcon" className={styles.passwordIcon} />
-                        </div>
-                        <div className={styles.inputContainer}>
-                            <input
-                                type="password"
-                                placeholder='Repetir Contraseña'
-                                onChange={(e) => setConfirmPassword(e.target.value)}
-                            />
-                            <img src={passwordIcon} alt="passwordIcon" className={styles.passwordIcon} />
-                        </div>
+            </div>
 
-
-                        <div className={styles.privacyContent}>
-                            <h3 className={styles.privacyText}>
-                                Acepto los Términos y Condiciones y la Política de Privacidad
-                            </h3>
-                            <img src={checkboxIcon} alt="checkboxIcon" />
-                        </div>
-
-                        <button type="submit" className={styles.buttonSubmit}>Registrar</button>
-                    </form>
+            <div className={styles.aboutSectionContainer}>
+                <div className={styles.ContainerImage}>
+                    <img src={petqrIcon} alt="" />
+                    <h1>Crea una cuenta</h1>
+                    <h3>Registrate para comenzar</h3>
                 </div>
             </div>
         </div>

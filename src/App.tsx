@@ -1,7 +1,8 @@
 import './App.css';
-import { HomeForm, RegisterForm, PrivateRoute, Dashboard } from './components';
+import { HomeForm, RegisterForm, Dashboard } from './components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { LoginForm } from './components/LoginForm/LoginForm';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute.jsx';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
         <Route path="/login" element={<LoginForm />} />
 
         <Route 
-          path="/perfil" 
+          path="/home" 
           element={<PrivateRoute element={Dashboard} />} 
         />
       </Routes>

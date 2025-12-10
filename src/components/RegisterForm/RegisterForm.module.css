@@ -1,29 +1,41 @@
+
+/* Estilos del contenedor principal */
 .Header {
     width: 100%;
-    height: 100%;
-    min-width: 340px;
+    height: 100vh;  /* Esto hace que ocupe toda la altura visible de la pantalla */
     background-color: #DFF4FA;
-    display: flex;
-    align-items: flex-end;
-}
-
-.FormContainer {
-    width: 100%;
-    height: 85%;
-    background-color: white;
-    border-radius: 117px 117px 0px 0px;
-    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
+    justify-content: flex-end;
+    overflow: hidden; 
 }
 
+
+.FormContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-height: 90%;  
+    flex-grow: 1; 
+    background-color: white;
+    border-radius: 117px 117px 0px 0px;
+    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.25);
+    align-items: center;
+    position: relative;
+    max-width: 455px;
+    padding-bottom: 20px;
+}
+
+
+
 .pugIconContainer {
-    width: 60%;
+    width: 37%;
     height: auto;
     position: absolute;
-    top: -12%;
+    top: -10%;
+    max-width: 439px;
+    max-height: 210px;
 }
 
 .pugIcon {
@@ -32,31 +44,33 @@
     object-fit: contain;
 }
 
+/* Título del formulario */
 .title {
-    margin-top: 130px;
-    font-size: 28px;
+    margin-top: 21%;
+    font-size: 1.7rem;
     font-weight: 600;
     text-align: center;
 }
 
+/* Contenedor del formulario */
 .formRegister {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 35px;
+    margin-top: 6%;
 }
 
+/* Entradas del formulario */
 .formInputs {
     width: 85%;
-    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 12px;
 }
 
+/* Estilos de los inputs */
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -72,6 +86,7 @@ input[type="password"] {
     font-family: SFPRO;
     font-weight: 600;
     font-size: 16px;
+    margin: 1% 0% 2% 0%;
 }
 
 input[type="text"]:focus {
@@ -79,7 +94,7 @@ input[type="text"]:focus {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-
+/* Contenedor de cada input */
 .inputContainer {
     position: relative;
     width: 100%;
@@ -92,13 +107,8 @@ input[type="text"]:focus {
     color: black;
 }
 
-.userIcon {
-    position: absolute;
-    left: 14px;
-    width: 30px;
-    height: 30px;
-}
-
+/* Iconos dentro de los inputs */
+.userIcon,
 .passwordIcon {
     position: absolute;
     left: 14px;
@@ -106,13 +116,14 @@ input[type="text"]:focus {
     height: 30px;
 }
 
+/* Estilo del texto de privacidad */
 .privacyContent {
     display: flex;
     align-items: center;
     position: relative;
     text-decoration: underline;
     font-weight: 400;
-    font-size: 14px;
+    font-size: 12px;
     color: #747474;
     padding-left: 16px;
     padding-right: 12px;
@@ -125,13 +136,120 @@ input[type="text"]:focus {
     width: 21px;
 }
 
-.buttonSubmit{
+/* Estilo del botón de registro */
+.buttonSubmit {
     width: 95%;
-    height: 61px;
+    min-height: 61px;
+    /* Asegura que el botón tenga suficiente altura */
     background-color: #2C2D2D;
     color: white;
     font-weight: 600;
     font-size: 21px;
     border-radius: 20px;
     margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Sección de la about (no visible por ahora) */
+.aboutSectionContainer {
+    display: none;
+}
+
+.ContainerGridForm {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.AboutContainerGrid {
+    display: none;
+}
+
+.navbarContainer {
+    display: none;
+}
+
+@media (min-width: 1025px) {
+    .Header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 6fr;
+        align-items: flex-end;
+        grid-template-areas:
+            "NavbarMenu NavbarMenu"
+            "AboutSection FormContainer";
+    }
+
+    .ContainerGridForm {
+        align-items: flex-end;
+    }
+
+    .FormContainer {
+        grid-area: FormContainer;
+        width: 100%;
+        height: 80%;
+        flex-grow: 1;
+        margin-right: 58px;
+
+    }
+
+    .aboutSectionContainer {
+        grid-area: AboutSection;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+    }
+
+    .ContainerImage {
+        width: 621px;
+        height: 621px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .ContainerImage img {
+        width: 100%;
+        object-fit: contain;
+        position: absolute;
+    }
+
+    .ContainerImage h1 {
+        position: absolute;
+        top: 441px;
+        font-weight: 700;
+        font-size: 59px;
+    }
+
+    .ContainerImage h3 {
+        position: absolute;
+        top: 504px;
+        font-size: 28px;
+        font-weight: 600;
+    }
+
+    .navbarContainer {
+        grid-area: NavbarMenu;
+        display: block;
+        width: 100%;
+        height: 87px;
+        height: auto;
+        padding: 20px;
+    }
+
+    .navbarMenu{
+        width: 98%;
+        height: 87px;
+        background-color: white;
+        border-radius: 51px;
+    }
 }

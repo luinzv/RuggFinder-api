@@ -30,7 +30,7 @@ export const LoginForm = () => {
             console.log("Usuario autenticado:", data);
             localStorage.setItem("token", data.token); 
             
-            window.location.href = "/perfil"; 
+            window.location.href = "/home"; 
 
         } catch (err:any) {
             setError(err.message); 
