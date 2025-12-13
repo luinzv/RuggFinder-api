@@ -175,7 +175,7 @@ input[type="text"]:focus {
     display: none;
 }
 
-@media (min-width: 300px){
+@media (min-width: 100px){
     .privacyContent img{
         display: none;
     }
