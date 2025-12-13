@@ -104,7 +104,6 @@
     align-items: center;
     flex: 1 1 auto;
     min-height: 0;
-    gap: 3px;
 }
 
 input[type="text"],
