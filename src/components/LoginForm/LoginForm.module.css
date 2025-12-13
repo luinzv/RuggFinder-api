@@ -104,6 +104,7 @@
     align-items: center;
     flex: 1 1 auto;
     min-height: 0;
+    gap: 7px;
 }
 
 input[type="text"],
@@ -208,7 +209,7 @@ input[type="text"]:focus {
     display: none;
 }
 
-@media (min-width: 300px) {
+@media (min-width: 100px) {
     .privacyContent img {
         display: none;
     }
