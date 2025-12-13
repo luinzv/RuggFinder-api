@@ -1,41 +1,41 @@
-
-/* Estilos del contenedor principal */
 .Header {
     width: 100%;
-    height: 100vh;  /* Esto hace que ocupe toda la altura visible de la pantalla */
+    height: 100vh;
     background-color: #DFF4FA;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-    overflow: hidden; 
+    overflow: auto;
 }
 
 
 .FormContainer {
+    width: 100%;
+    max-width: 455px;
     display: flex;
     flex-direction: column;
-    width: 100%;
-    max-height: 90%;  
-    flex-grow: 1; 
+    align-items: center;
     background-color: white;
     border-radius: 117px 117px 0px 0px;
-    box-shadow: 0px 0px 24px 0px rgba(0, 0, 0, 0.25);
-    align-items: center;
+    box-shadow: 0px 0px 24px rgba(0,0,0,.25);
     position: relative;
-    max-width: 455px;
     padding-bottom: 20px;
+
+    flex: 1 1 auto;      /* 🔑 se adapta */
+    min-height: 0;       /* 🔑 puede encogerse */
 }
 
 
-
 .pugIconContainer {
-    width: 43%;
+    width: 37%;
     height: auto;
     position: absolute;
     top: -10%;
     max-width: 439px;
     max-height: 210px;
+    min-height: 0;
+
 }
 
 .pugIcon {
@@ -52,7 +52,6 @@
     text-align: center;
 }
 
-/* Contenedor del formulario */
 .formRegister {
     width: 100%;
     height: 100%;
@@ -60,22 +59,25 @@
     flex-direction: column;
     align-items: center;
     margin-top: 6%;
+    min-height: 0;
+    flex: 1 1 auto;
 }
 
-/* Entradas del formulario */
 .formInputs {
-    width: 85%;
+    width: 75%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1 1 auto; 
+    min-height: 0;
 }
 
-/* Estilos de los inputs */
 input[type="text"],
 input[type="email"],
 input[type="password"] {
     width: 100%;
-    height: 61px;
+    min-height: 61px;
+    height: auto;
     padding: 10px;
     padding-top: 12px;
     border-radius: 20px;
@@ -86,7 +88,7 @@ input[type="password"] {
     font-family: SFPRO;
     font-weight: 600;
     font-size: 16px;
-    margin: 1% 0% 2% 0%;
+    margin: 0;
 }
 
 input[type="text"]:focus {
@@ -94,12 +96,13 @@ input[type="text"]:focus {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-/* Contenedor de cada input */
 .inputContainer {
     position: relative;
     width: 100%;
     display: flex;
     align-items: center;
+    flex-shrink: 1; 
+    min-height: 0;
 }
 
 .inputContainer input::placeholder {
@@ -107,7 +110,6 @@ input[type="text"]:focus {
     color: black;
 }
 
-/* Iconos dentro de los inputs */
 .userIcon,
 .passwordIcon {
     position: absolute;
@@ -116,7 +118,6 @@ input[type="text"]:focus {
     height: 30px;
 }
 
-/* Estilo del texto de privacidad */
 .privacyContent {
     display: flex;
     align-items: center;
@@ -136,11 +137,9 @@ input[type="text"]:focus {
     width: 21px;
 }
 
-/* Estilo del botón de registro */
 .buttonSubmit {
     width: 95%;
-    min-height: 61px;
-    /* Asegura que el botón tenga suficiente altura */
+    min-height: 41px;
     background-color: #2C2D2D;
     color: white;
     font-weight: 600;
@@ -150,9 +149,10 @@ input[type="text"]:focus {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 1;
+    height: 61px;
 }
 
-/* Sección de la about (no visible por ahora) */
 .aboutSectionContainer {
     display: none;
 }
@@ -164,6 +164,7 @@ input[type="text"]:focus {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+    min-height: 0;
 }
 
 .AboutContainerGrid {
@@ -174,11 +175,18 @@ input[type="text"]:focus {
     display: none;
 }
 
-@media (min-width: 1025px) {
+
+/* RESOLUCIÓN MEDIANA */
+
+@media (min-width: 1280px) {
     .Header {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 10fr;
+        background-image: url("../../assets/background.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0% 60%;
         align-items: flex-end;
         grid-template-areas:
             "NavbarMenu NavbarMenu"
@@ -195,7 +203,7 @@ input[type="text"]:focus {
         height: 80%;
         flex-grow: 1;
         margin-right: 58px;
-
+        min-height: 100%;
     }
 
     .aboutSectionContainer {
@@ -205,51 +213,413 @@ input[type="text"]:focus {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-end;
-    }
-
-    .ContainerImage {
-        width: 621px;
-        height: 621px;
-        display: flex;
-        flex-direction: column;
         align-items: center;
+    }
+
+    .visualWrapper {
         position: relative;
-    }
-
-    .ContainerImage img {
         width: 100%;
+        height: 70%;
+        margin-left: 26%;
+    }
+
+    .imageWrapper {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+    }
+
+    .imageWrapper img {
+        width: 100%;
+        height: 100%;
         object-fit: contain;
-        position: absolute;
     }
 
-    .ContainerImage h1 {
+    .textWrapper {
         position: absolute;
-        top: 441px;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 2;
+        width: 100%;
+    }
+
+    .textWrapper h1 {
+        font-size: clamp(2rem, 3rem, 3.7rem);
         font-weight: 700;
-        font-size: 59px;
     }
 
-    .ContainerImage h3 {
-        position: absolute;
-        top: 504px;
-        font-size: 28px;
+    .textWrapper h3 {
+        font-size: clamp(1.2rem, 1.5rem, 1.8rem);
         font-weight: 600;
     }
+
 
     .navbarContainer {
         grid-area: NavbarMenu;
         display: block;
         width: 100%;
         height: 87px;
-        height: auto;
-        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
-    .navbarMenu{
-        width: 98%;
-        height: 87px;
+
+    .navbarMenu {
+        width: 93%;
+        height: 70%;
         background-color: white;
         border-radius: 51px;
+        display: flex;
+        justify-content: space-between;
     }
+
+    .pugIconContainer {
+        position: relative;
+        top: 0;
+    }
+
+    .title {
+        margin-top: 0;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        height: 61px;
+        padding: 10px;
+        padding-top: 12px;
+        border-radius: 20px;
+        border: 1px solid black;
+        background-color: white;
+        outline: none;
+        padding-left: 55px;
+        font-family: SFPRO;
+        font-weight: 600;
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .buttonSubmit {
+        margin: 0;
+        margin-top: 4%;
+    }
+
+    .formRegister {
+        margin-top: 3%;
+    }
+
+    .buttonStyles {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        font-size: clamp(0.9rem, 1.1rem, 2rem);
+        font-weight: 600;
+    }
+
+    .buttonStyles .buttons{
+        width: 282px;
+        height: 63%;
+        border-radius: 20px;
+    }
+
+    .buttonStyles .btnblack{
+        background-color: #2C2D2D;
+        border-radius: 20px;
+        color: white;
+    }
+
+    .buttonStyles .btnwhite{
+        background-color: white;
+        border: 2px solid black;
+    }
+    .stamp{
+        width: 20%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+    }
+    .stampImage{
+        height: 100%;
+    }
+
+    .stampImage img{
+        height: 100%;
+        transform: scale(1.5) translateY(3px) rotate(-5.15deg);
+        object-fit: contain;
+    }
+    .stampText{
+        width: 67%;
+        font-size: clamp(1rem, 1.5rem, 2rem);
+        font-weight: 600;
+    }
+    .aboutContainerNav{
+        height: 100%;
+        width: 32%;
+        display: flex;
+        justify-content: center;
+        gap: 27px;
+        font-weight: 600;
+        font-size: clamp(0.9rem, 1.1rem, 2rem);
+    }
+    .aboutContainerNav a{
+        display: flex;
+        align-items: center;
+        
+    }
+
+    .login{
+        display: flex;
+        width: 19%;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        margin-right: 35px;
+    }
+
+    .containerUserSvg{
+        height: 40%;
+    }
+    .containerUserSvg img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .login h3{
+        font-weight: 600;
+    }
+
+}
+
+
+
+
+
+/* RESOLUCIÓN MAS GRANDE */
+@media (min-width: 1536px) {
+    .Header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 10fr;
+        background-image: url("../../assets/background.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0% 60%;
+        align-items: flex-end;
+        grid-template-areas:
+            "NavbarMenu NavbarMenu"
+            "AboutSection FormContainer";
+    }
+
+    .ContainerGridForm {
+        align-items: flex-end;
+    }
+
+    .FormContainer {
+        grid-area: FormContainer;
+        width: 100%;
+        height: 80%;
+        flex-grow: 1;
+        margin-right: 58px;
+        min-height: 100%;
+    }
+
+    .aboutSectionContainer {
+        grid-area: AboutSection;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .visualWrapper {
+        position: relative;
+        width: 100%;
+        height: 70%;
+        margin-left: 26%;
+    }
+
+    .imageWrapper {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+    }
+
+    .imageWrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .textWrapper {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 2;
+        width: 100%;
+    }
+
+    .textWrapper h1 {
+        font-size: clamp(2rem, 3rem, 3.7rem);
+        font-weight: 700;
+    }
+
+    .textWrapper h3 {
+        font-size: clamp(1.2rem, 1.5rem, 1.8rem);
+        font-weight: 600;
+    }
+
+
+    .navbarContainer {
+        grid-area: NavbarMenu;
+        display: block;
+        width: 100%;
+        height: 87px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .navbarMenu {
+        width: 93%;
+        height: 70%;
+        background-color: white;
+        border-radius: 51px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .pugIconContainer {
+        position: relative;
+        top: 0;
+    }
+
+    .title {
+        margin-top: 0;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        height: 61px;
+        padding: 10px;
+        padding-top: 12px;
+        border-radius: 20px;
+        border: 1px solid black;
+        background-color: white;
+        outline: none;
+        padding-left: 55px;
+        font-family: SFPRO;
+        font-weight: 600;
+        font-size: 16px;
+        margin: 0;
+        margin-top: 2%;
+    }
+
+    .buttonSubmit {
+        margin: 0;
+        margin-top: 4%;
+    }
+
+    .formRegister {
+        margin-top: 3%;
+    }
+
+    .buttonStyles {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        font-size: clamp(0.9rem, 1.1rem, 2rem);
+        font-weight: 600;
+    }
+
+    .buttonStyles .buttons{
+        width: 282px;
+        height: 63%;
+        border-radius: 20px;
+    }
+
+    .buttonStyles .btnblack{
+        background-color: #2C2D2D;
+        border-radius: 20px;
+        color: white;
+    }
+
+    .buttonStyles .btnwhite{
+        background-color: white;
+        border: 2px solid black;
+    }
+    .stamp{
+        width: 20%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+    }
+    .stampImage{
+        height: 100%;
+    }
+
+    .stampImage img{
+        height: 100%;
+        transform: scale(1.5) translateY(3px) rotate(-5.15deg);
+        object-fit: contain;
+    }
+    .stampText{
+        width: 67%;
+        font-size: clamp(1rem, 1.5rem, 2rem);
+        font-weight: 600;
+    }
+    .aboutContainerNav{
+        height: 100%;
+        width: 32%;
+        display: flex;
+        justify-content: center;
+        gap: 27px;
+        font-weight: 600;
+        font-size: clamp(0.9rem, 1.1rem, 2rem);
+    }
+    .aboutContainerNav a{
+        display: flex;
+        align-items: center;
+        
+    }
+
+    .login{
+        display: flex;
+        width: 19%;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        margin-right: 35px;
+    }
+
+    .containerUserSvg{
+        height: 40%;
+    }
+    .containerUserSvg img{
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .login h3{
+        font-weight: 600;
+    }
+
 }

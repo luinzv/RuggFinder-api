@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './RegisterForm.module.css';
-import { pugqrIcon, userIcon, mailIcon, passwordIcon, checkboxIcon, petqrIcon } from '../../assets/icon';
+import { pugqrIcon, userIcon, mailIcon, passwordIcon, checkboxIcon, petqrIcon, stampImage, userSvg } from '../../assets/icon';
 
 export const RegisterForm = () => {
     const [email, setEmail] = useState('');
@@ -49,7 +49,28 @@ export const RegisterForm = () => {
         <div className={styles.Header}>
             <div className={styles.navbarContainer}>
                 <div className={styles.navbarMenu}>
-                    
+                    <div className={styles.stamp}>
+                        <div className={styles.stampImage}>
+                            <img src={stampImage} alt="fingerprint" />
+                        </div>
+                        <div className={styles.stampText}>
+                            RuggFinder
+                        </div>
+                    </div>
+
+                    <div className={styles.aboutContainerNav}>
+                        <a href="#">Inicio</a>
+                        <a href="#">Nosotros</a>
+                        <a href="#">Contacto</a>
+                    </div>
+
+
+                    <div className={styles.login}>
+                        <div className={styles.containerUserSvg}>
+                            <img src={userSvg} alt="userSvg" />
+                        </div>
+                        <h3>Ingresar</h3>
+                    </div>
                 </div>
             </div>
             <div className={styles.ContainerGridForm}>
@@ -108,12 +129,29 @@ export const RegisterForm = () => {
             </div>
 
             <div className={styles.aboutSectionContainer}>
-                <div className={styles.ContainerImage}>
-                    <img src={petqrIcon} alt="" />
-                    <h1>Crea una cuenta</h1>
-                    <h3>Registrate para comenzar</h3>
+                <div className={styles.aboutSectionContainer}>
+                    <div className={styles.visualWrapper}>
+
+                        <div className={styles.imageWrapper}>
+                            <img src={petqrIcon} alt="PetQR" />
+                        </div>
+
+                        <div className={styles.textWrapper}>
+                            <h1>Crea una cuenta</h1>
+                            <h3>Regístrate para comenzar</h3>
+                        </div>
+                    </div>
+                    <div className={styles.buttonStyles}>
+                            <button className={`${styles.btnblack} ${styles.buttons}`}>
+                                Registrarse
+                            </button>
+                            <button className={`${styles.btnwhite} ${styles.buttons}`}>
+                                Ingresar
+                            </button>
+                        </div>
                 </div>
             </div>
+
         </div>
     );
 };
