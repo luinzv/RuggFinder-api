@@ -175,6 +175,11 @@ input[type="text"]:focus {
     display: none;
 }
 
+@media (min-width: 300px){
+    .privacyContent img{
+        display: none;
+    }
+}
 
 /* RESOLUCIÓN MEDIANA */
 
@@ -192,7 +197,9 @@ input[type="text"]:focus {
             "NavbarMenu NavbarMenu"
             "AboutSection FormContainer";
     }
-
+    .privacyContent img{
+        display: inline-block;
+    }
     .ContainerGridForm {
         align-items: flex-end;
     }

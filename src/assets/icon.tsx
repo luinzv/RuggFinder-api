@@ -8,5 +8,8 @@ import petqrIcon from './petqr-icon.png'
 import backgroundTheme from './background.png'
 import stampImage from './fingerprint.png'
 import userSvg from './userSvg.svg'
-export { pugqrIcon, mailIcon, userIcon, passwordIcon, checkboxIcon, humanpetIcon, petqrIcon, backgroundTheme, stampImage, userSvg }
+import backgroundCathuman from './background-cathuman.png'
+import catSleepingIcon from './catsleepingIcon.png'
+import backgroundPet from './backgroundPet.png'
+export { pugqrIcon, mailIcon, userIcon, passwordIcon, checkboxIcon, humanpetIcon, petqrIcon, backgroundTheme, stampImage, userSvg, backgroundCathuman, catSleepingIcon, backgroundPet }
   

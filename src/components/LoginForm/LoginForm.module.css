@@ -1,82 +1,683 @@
-.Header{
+.Header {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: #DFF4FA;
-    display: flex;
-    align-items: flex-end;
-}
-
-.FormContainer{
-    width: 100%;
-    height: 85%;
-    background-color: white;
-    border-radius: 117px 117px 0px 0px;
-    box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.25);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
+    overflow: auto;
 }
 
-.FormLogin{
-    width: 72%;
-    height: 92%;
+
+.FormContainer {
+    width: 100%;
+    max-width: 455px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: white;
+    border-radius: 117px 117px 0px 0px;
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, .25);
+    position: relative;
+    padding-bottom: 20px;
+    min-height: 90%;
+    flex: 1 1 auto;
+    min-height: 0;
+    max-height: 90%;
 }
 
-.textTitle{
+.accessAccount {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 60px;
 }
 
-.textTitle h1{
-    font-size: 26px;
+
+.accessAccount h1{
     font-weight: 600;
 }
-
-.inputContainer{
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 100%;
-    height: auto;
-    margin-bottom: 14px;
+.accessAccount h3{
+    font-weight: 500;
 }
 
-.inputContainer img{
+
+.pugIconContainer {
+    height: auto;
     position: absolute;
-    left: 5%;
+    top: -3%;
+    max-width: 439px;
+    max-height: 210px;
+    min-height: 0;
+    width: 56%;
+    display: none;
+}
+
+.pugIcon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.title {
+    margin-top: 45%;
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.formRegister {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 44%;
+    min-height: 0;
+    flex: 1 1 auto;
+}
+
+.catIconContainer {
+    height: auto;
+    position: absolute;
+    top: 18%;
+    max-width: 439px;
+    max-height: 210px;
+    min-height: 0;
+    width: 44%;
+}
+
+.catIcon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+.formInputs {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 1 auto;
+    min-height: 0;
+    gap: 7px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    height: 61px;
+    padding: 10px;
+    padding-top: 12px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: white;
+    outline: none;
+    padding-left: 55px;
+    font-family: SFPRO;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0;
+}
+
+input[type="text"]:focus {
+    border: 1px solid #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.inputContainer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-shrink: 1;
+    min-height: 0;
+}
+
+.inputContainer input::placeholder {
+    font-size: 16px;
+    color: black;
+}
+
+.userIcon,
+.passwordIcon {
+    position: absolute;
+    left: 14px;
     width: 30px;
     height: 30px;
 }
-.inputContainer input{
-        padding-left: 47px;
-}
 
-.textTitle h3{
-    font-size: 16px;
-    font-weight: 400;
-}
-
-.forgotpassword a{
-    font-size: 17px;
-    font-weight: 400;
+.privacyContent {
+    display: flex;
+    align-items: center;
+    position: relative;
     text-decoration: underline;
+    font-weight: 400;
+    font-size: 12px;
+    color: #747474;
+    padding-left: 16px;
+    padding-right: 12px;
 }
 
-.forgotpassword{
-    margin-top: -5px;
+.privacyContent img {
+    position: absolute;
+    top: 14px;
+    left: 104px;
+    width: 21px;
 }
 
-.AccessButton{
-    width: 100%;
-    height: 61px;
+.buttonSubmit {
+    width: 95%;
+    min-height: 41px;
     background-color: #2C2D2D;
     color: white;
-    border-radius: 20px;
-    margin-top: 24px;
+    font-weight: 600;
     font-size: 21px;
+    border-radius: 20px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 1;
+    height: 61px;
+}
+
+.aboutSectionContainer {
+    display: none;
+}
+
+.ContainerGridForm {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 0;
+}
+
+.AboutContainerGrid {
+    display: none;
+}
+
+.navbarContainer {
+    display: none;
+}
+
+@media (min-width: 300px) {
+    .privacyContent img {
+        display: none;
+    }
+
+
+}
+
+/* RESOLUCIÓN MEDIANA */
+
+@media (min-width: 1280px) {
+    .Header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 10fr;
+        background-image: url("../../assets/background.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0% 60%;
+        align-items: flex-end;
+        grid-template-areas:
+            "NavbarMenu NavbarMenu"
+            "AboutSection FormContainer";
+    }
+
+    .privacyContent img {
+        display: inline-block;
+    }
+
+    .ContainerGridForm {
+        align-items: flex-end;
+    }
+
+    .FormContainer {
+        grid-area: FormContainer;
+        width: 100%;
+        height: 80%;
+        flex-grow: 1;
+        margin-right: 58px;
+        min-height: 100%;
+    }
+
+    .aboutSectionContainer {
+        grid-area: AboutSection;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .visualWrapper {
+        position: relative;
+        width: 100%;
+        height: 70%;
+        margin-left: 26%;
+    }
+
+    .imageWrapper {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        transform: translateY(13px);
+    }
+
+    .imageWrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .textWrapper {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 2;
+        width: 100%;
+    }
+
+    .textWrapper h1 {
+        font-size: clamp(2rem, 3rem, 3.7rem);
+        font-weight: 700;
+    }
+
+    .textWrapper h3 {
+        font-size: clamp(1.2rem, 1.5rem, 1.8rem);
+        font-weight: 600;
+    }
+
+
+    .navbarContainer {
+        grid-area: NavbarMenu;
+        display: block;
+        width: 100%;
+        height: 87px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .navbarMenu {
+        width: 93%;
+        height: 70%;
+        background-color: white;
+        border-radius: 51px;
+        display: flex;
+        justify-content: space-between;
+        box-shadow: 0px 5px 31px rgba(0, 0, 0, .10);
+    }
+
+    .pugIconContainer {
+        position: relative;
+        top: 0;
+    }
+
+    .title {
+        margin-top: 0;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        height: 50px;
+        padding: 10px;
+        padding-top: 12px;
+        border-radius: 20px;
+        border: 1px solid black;
+        background-color: white;
+        outline: none;
+        padding-left: 55px;
+        font-family: SFPRO;
+        font-weight: 600;
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .buttonSubmit {
+        margin: 0;
+        margin-top: 4%;
+    }
+
+    .formRegister {
+        margin-top: 3%;
+    }
+
+    .buttonStyles {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        font-size: clamp(0.9rem, 1.1rem, 2rem);
+        font-weight: 600;
+    }
+
+    .buttonStyles .buttons {
+        width: 239px;
+        height: 63%;
+        border-radius: 20px;
+    }
+
+    .buttonStyles .btnblack {
+        background-color: #2C2D2D;
+        border-radius: 20px;
+        color: white;
+    }
+
+    .buttonStyles .btnwhite {
+        background-color: white;
+        border: 2px solid black;
+    }
+
+    .stamp {
+        width: 20%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+    }
+
+    .stampImage {
+        height: 100%;
+    }
+
+    .stampImage img {
+        height: 100%;
+        transform: scale(1.5) translateY(3px) rotate(-5.15deg);
+        object-fit: contain;
+    }
+
+    .stampText {
+        width: 67%;
+        font-size: clamp(1rem, 1.5rem, 2rem);
+        font-weight: 600;
+    }
+
+    .aboutContainerNav {
+        height: 100%;
+        width: 32%;
+        display: flex;
+        justify-content: center;
+        gap: 27px;
+        font-weight: 600;
+        font-size: clamp(0.9rem, 1.1rem, 2rem);
+    }
+
+    .aboutContainerNav a {
+        display: flex;
+        align-items: center;
+
+    }
+
+    .login {
+        display: flex;
+        width: 19%;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        margin-right: 35px;
+    }
+
+    .containerUserSvg {
+        height: 40%;
+    }
+
+    .containerUserSvg img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .login h3 {
+        font-weight: 600;
+    }
+
+}
+
+
+
+
+
+/* RESOLUCIÓN MAS GRANDE */
+@media (min-width: 1536px) {
+    .Header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 10fr;
+        background-image: url("../../assets/background.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 0% 60%;
+        align-items: flex-end;
+        grid-template-areas:
+            "NavbarMenu NavbarMenu"
+            "AboutSection FormContainer";
+    }
+
+    .ContainerGridForm {
+        align-items: flex-end;
+    }
+
+    .FormContainer {
+        grid-area: FormContainer;
+        width: 100%;
+        height: 80%;
+        flex-grow: 1;
+        margin-right: 58px;
+        min-height: 100%;
+    }
+
+    .aboutSectionContainer {
+        grid-area: AboutSection;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .visualWrapper {
+        position: relative;
+        width: 100%;
+        height: 70%;
+        margin-left: 26%;
+    }
+
+    .imageWrapper {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+    }
+
+    .imageWrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .textWrapper {
+        position: absolute;
+        bottom: 5%;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        z-index: 2;
+        width: 100%;
+    }
+
+    .textWrapper h1 {
+        font-size: clamp(2rem, 3rem, 3.7rem);
+        font-weight: 700;
+    }
+
+    .textWrapper h3 {
+        font-size: clamp(1.2rem, 1.5rem, 1.8rem);
+        font-weight: 600;
+    }
+
+
+    .navbarContainer {
+        grid-area: NavbarMenu;
+        display: block;
+        width: 100%;
+        height: 87px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    .navbarMenu {
+        width: 93%;
+        height: 70%;
+        background-color: white;
+        border-radius: 51px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .pugIconContainer {
+        position: relative;
+        top: 0;
+    }
+
+    .title {
+        margin-top: 0;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+        width: 100%;
+        height: 61px;
+        padding: 10px;
+        padding-top: 12px;
+        border-radius: 20px;
+        border: 1px solid black;
+        background-color: white;
+        outline: none;
+        padding-left: 55px;
+        font-family: SFPRO;
+        font-weight: 600;
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .buttonSubmit {
+        margin: 0;
+        margin-top: 4%;
+    }
+
+    .formRegister {
+        margin-top: 3%;
+    }
+
+    .buttonStyles {
+        width: 100%;
+        height: 100px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 20px;
+        font-size: clamp(0.9rem, 1.1rem, 2rem);
+        font-weight: 600;
+    }
+
+    .buttonStyles .buttons {
+        width: 282px;
+        height: 63%;
+        border-radius: 20px;
+    }
+
+    .buttonStyles .btnblack {
+        background-color: #2C2D2D;
+        border-radius: 20px;
+        color: white;
+    }
+
+    .buttonStyles .btnwhite {
+        background-color: white;
+        border: 2px solid black;
+    }
+
+    .stamp {
+        width: 20%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 10px;
+    }
+
+    .stampImage {
+        height: 100%;
+    }
+
+    .stampImage img {
+        height: 100%;
+        transform: scale(1.5) translateY(3px) rotate(-5.15deg);
+        object-fit: contain;
+    }
+
+    .stampText {
+        width: 67%;
+        font-size: clamp(1rem, 1.5rem, 2rem);
+        font-weight: 600;
+    }
+
+    .aboutContainerNav {
+        height: 100%;
+        width: 32%;
+        display: flex;
+        justify-content: center;
+        gap: 27px;
+        font-weight: 600;
+        font-size: clamp(0.9rem, 1.1rem, 2rem);
+    }
+
+    .aboutContainerNav a {
+        display: flex;
+        align-items: center;
+
+    }
+
+    .login {
+        display: flex;
+        width: 19%;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        margin-right: 35px;
+    }
+
+    .containerUserSvg {
+        height: 40%;
+    }
+
+    .containerUserSvg img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .login h3 {
+        font-weight: 600;
+    }
+
 }
