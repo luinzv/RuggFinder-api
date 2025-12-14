@@ -17,7 +17,7 @@ const usuarioSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
-      select: false, // opcional, pero recomendado
+      select: false, 
     },
   },
   { timestamps: true }

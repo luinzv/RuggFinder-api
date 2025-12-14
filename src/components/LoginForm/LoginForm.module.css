@@ -9,6 +9,9 @@
     overflow: auto;
 }
 
+.titleCatContainer {
+    display: none;
+}
 
 .FormContainer {
     width: 100%;
@@ -24,7 +27,7 @@
     min-height: 90%;
     flex: 1 1 auto;
     min-height: 0;
-    max-height: 90%;
+    max-height: 70%;
 }
 
 .accessAccount {
@@ -36,10 +39,11 @@
 }
 
 
-.accessAccount h1{
+.accessAccount h1 {
     font-weight: 600;
 }
-.accessAccount h3{
+
+.accessAccount h3 {
     font-weight: 500;
 }
 
@@ -105,6 +109,7 @@
     flex: 1 1 auto;
     min-height: 0;
     gap: 7px;
+    margin-top: 20px;
 }
 
 input[type="text"],
@@ -212,6 +217,7 @@ input[type="text"]:focus {
 @media (min-width: 100px) {
     .privacyContent img {
         display: none;
+        
     }
 
 
@@ -233,7 +239,10 @@ input[type="text"]:focus {
             "NavbarMenu NavbarMenu"
             "AboutSection FormContainer";
     }
-
+    .privacyContent{
+        margin-top: 5px;
+        width: 100%;
+    }
     .privacyContent img {
         display: inline-block;
     }
@@ -245,10 +254,10 @@ input[type="text"]:focus {
     .FormContainer {
         grid-area: FormContainer;
         width: 100%;
-        height: 80%;
+        height: 95%;
         flex-grow: 1;
         margin-right: 58px;
-        min-height: 100%;
+        min-height: 95%;
     }
 
     .aboutSectionContainer {
@@ -279,6 +288,17 @@ input[type="text"]:focus {
         width: 100%;
         height: 100%;
         object-fit: contain;
+    }
+
+    .titleCatContainer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .accessAccount {
+        display: none;
     }
 
     .textWrapper {
@@ -324,8 +344,15 @@ input[type="text"]:focus {
     }
 
     .pugIconContainer {
+        display: block;
         position: relative;
-        top: 0;
+        top: 26px;
+        transform: scale(1.4);
+
+    }
+
+    .catIconContainer {
+        display: none;
     }
 
     .title {
@@ -335,6 +362,7 @@ input[type="text"]:focus {
     input[type="text"],
     input[type="email"],
     input[type="password"] {
+        min-height: 57px;
         width: 100%;
         height: 50px;
         padding: 10px;
@@ -367,6 +395,7 @@ input[type="text"]:focus {
         gap: 20px;
         font-size: clamp(0.9rem, 1.1rem, 2rem);
         font-weight: 600;
+        z-index: 0;
     }
 
     .buttonStyles .buttons {
@@ -417,7 +446,7 @@ input[type="text"]:focus {
         justify-content: center;
         gap: 27px;
         font-weight: 600;
-        font-size: clamp(0.9rem, 1.1rem, 2rem);
+        font-size:clamp(0.9rem, 1.2rem, 2rem);
     }
 
     .aboutContainerNav a {
@@ -478,10 +507,11 @@ input[type="text"]:focus {
     .FormContainer {
         grid-area: FormContainer;
         width: 100%;
-        height: 80%;
+        height: 95%;
         flex-grow: 1;
         margin-right: 58px;
-        min-height: 100%;
+        min-height: 85%;
+            
     }
 
     .aboutSectionContainer {
@@ -555,8 +585,10 @@ input[type="text"]:focus {
     }
 
     .pugIconContainer {
+        display: block;
         position: relative;
-        top: 0;
+        top: 26px;
+        transform: scale(1.4);
     }
 
     .title {
@@ -598,6 +630,7 @@ input[type="text"]:focus {
         gap: 20px;
         font-size: clamp(0.9rem, 1.1rem, 2rem);
         font-weight: 600;
+        z-index: 0;
     }
 
     .buttonStyles .buttons {
@@ -679,5 +712,9 @@ input[type="text"]:focus {
     .login h3 {
         font-weight: 600;
     }
-
+    .privacyContent{
+        margin-top: 5px;
+        width: 100%;
+    }
+    
 }

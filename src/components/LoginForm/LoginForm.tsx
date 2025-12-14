@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./LoginForm.module.css";
-import { backgroundCathuman, catSleepingIcon, checkboxIcon, humanpetIcon, mailIcon, stampImage, userIcon, userSvg } from "../../assets/icon";
+import { backgroundCathuman, catSleepingIcon, humanpetIcon, mailIcon, stampImage, userIcon, userSvg } from "../../assets/icon";
 
 export const LoginForm = () => {
     const [email, setEmail] = useState("");
@@ -77,11 +77,16 @@ export const LoginForm = () => {
                     <div className={styles.catIconContainer}>
                         <img src={humanpetIcon} alt="pugicon" className={styles.catIcon} />
                     </div>
+
+                    <div className={styles.titleCatContainer}>
+                        <h1>Accede a tu cuenta</h1>
+                    </div>
+
                     <div className={styles.formRegister}>
                         <form action="" className={styles.formInputs} onSubmit={handleSubmit}>
                             <div className={styles.inputContainer}>
                                 <input
-                                    type="text"
+                                    type="email"
                                     placeholder='Correo electronico'
                                     onChange={(e) => setEmail(e.target.value)}
                                 />
@@ -89,7 +94,7 @@ export const LoginForm = () => {
                             </div>
                             <div className={styles.inputContainer}>
                                 <input
-                                    type="email"
+                                    type="password"
                                     placeholder='Contraseña'
                                     onChange={(e) => setPassword(e.target.value)}
                                 />
@@ -100,7 +105,6 @@ export const LoginForm = () => {
                                 <h3 className={styles.privacyText}>
                                     ¿Olvidaste tu contraseña?
                                 </h3>
-                                <img src={checkboxIcon} alt="checkboxIcon" />
                             </div>
 
                             <button type="submit" className={styles.buttonSubmit}>Registrar</button>

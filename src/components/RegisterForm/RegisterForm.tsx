@@ -11,7 +11,6 @@ export const RegisterForm = () => {
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
-
         if (password !== confirmPassword) {
             setError('Las contraseñas no coinciden');
             return;
