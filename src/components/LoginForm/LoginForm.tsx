@@ -1,11 +1,11 @@
 import { useState } from "react";
 import styles from "./LoginForm.module.css";
-import { backgroundCathuman, catSleepingIcon, checkboxIcon, humanpetIcon, mailIcon, passwordIcon, petqrIcon, pugqrIcon, stampImage, userIcon, userSvg } from "../../assets/icon";
+import { backgroundCathuman, catSleepingIcon, checkboxIcon, humanpetIcon, mailIcon, stampImage, userIcon, userSvg } from "../../assets/icon";
 
 export const LoginForm = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
+    const [, setError] = useState("");
 
     const handleSubmit = async (e: any) => {
         e.preventDefault();
