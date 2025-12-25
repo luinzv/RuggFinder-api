@@ -27,7 +27,7 @@
     min-height: 90%;
     flex: 1 1 auto;
     min-height: 0;
-    max-height: 70%;
+    max-height: 93%;
 }
 
 .accessAccount {
@@ -257,7 +257,7 @@ input[type="text"]:focus {
         height: 95%;
         flex-grow: 1;
         margin-right: 58px;
-        min-height: 95%;
+        max-height: 70%;
     }
 
     .aboutSectionContainer {
