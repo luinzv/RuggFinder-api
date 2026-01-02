@@ -72,7 +72,7 @@
     top: 77%;
 }
 
-.description{
+.description {
     position: absolute;
     top: 85%;
     font-weight: 400;
@@ -88,8 +88,8 @@
     min-height: 0;
     flex: 1 1 auto;
     gap: 5%;
-    margin-top: 73px;
-    
+    margin-top: 41px;
+
 }
 
 .catIconContainer {
@@ -228,14 +228,15 @@ input[type="text"]:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 273px;
+    width: 243px;
     height: 61px;
     background-color: #2c2d2d;
     color: #fff;
     border-radius: 20px;
     font-weight: 600;
-    font-size: 18px;
+    font-size: 16px;
     max-width: 100%;
+
 }
 
 .login {
@@ -245,11 +246,11 @@ input[type="text"]:focus {
     color: #000;
     background-color: #fff;
     border: 2px solid black;
-    width: 273px;
+    width: 243px;
     height: 61px;
     border-radius: 20px;
     font-weight: 600;
-    font-size: 21px;
+    font-size: 16px;
     max-width: 100%;
 }
 
@@ -273,6 +274,29 @@ input[type="text"]:focus {
     align-items: center;
 }
 
+.login1 {
+    display: flex;
+    width: 19%;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-right: 35px;
+}
+
+.containerData{
+    display: none;
+}
+
+.backtoback{
+    display: none;
+}
+
+.borderContainer{
+    display: none;
+}
+.signEmailContainer img{
+        display: none;
+    }
 @media (min-width: 100px) {
     .privacyContent img {
         display: none;
@@ -301,9 +325,94 @@ input[type="text"]:focus {
             "AboutSection FormContainer";
     }
 
+    .FormContainer {
+        max-width: 399px;
+    }
+
+    .logoContainer {
+        display: none;
+    }
+
+    .title {
+        display: none;
+    }
+    .forgotpasword{
+        text-decoration:underline;
+    }
+
+    .description {
+        display: none;
+    }
+    .privacyText{
+        display: none;
+    }
     .privacyContent {
         margin-top: 5px;
         width: 100%;
+    }
+    .containerData{
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        flex: 1 1 auto;
+        margin-top: 8px;
+        color: #6B6A6A;
+    }
+    .backtoback {
+        display: block;
+        width: 100%;
+        margin-top: 58px;
+        margin-bottom: 17px;
+    }
+
+    .noaccount a{
+        color: #64C2CF;
+    }
+    .aboutus span{
+        color: #2b2b2b;
+    }
+    .backtoback h1 {
+        font-size: 30px;
+        font-weight: 600;
+    }
+
+    .backtoback h3 {
+        font-weight: 400;
+        color: #6B6A6A;
+        font-size: 18px;
+    }
+
+    .borderContainer {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        font-size: 23px;
+    }
+
+    .borderfix {
+        width: 44%;
+        border-bottom: 1px solid #B4B4B4;
+        height: 16px;
+    }
+
+    .signEmailContainer {
+        position: relative;
+    }
+
+    .signEmail{
+        font-size: 17px;
+        width: 273px;
+        font-weight: 400;
+    }
+    .login{
+        width: 273px;
+        font-weight: 400;
+    }
+
+    .mailIcon {
+        position: absolute;
+        width: 20px;
     }
 
     .privacyContent img {
@@ -317,10 +426,12 @@ input[type="text"]:focus {
     .FormContainer {
         grid-area: FormContainer;
         width: 100%;
-        height: 95%;
         flex-grow: 1;
         margin-right: 58px;
-        min-height: 95%;
+        min-height: 80%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
     }
 
     .aboutSectionContainer {
@@ -329,8 +440,67 @@ input[type="text"]:focus {
         height: 100%;
         display: flex;
         flex-direction: column;
+        align-items: end;
         justify-content: center;
+    }
+
+    .aboutSectionContainerWrapper{
+        width: 86%;
+    }
+
+    .phraseContainer{
+        width: 100%;
+    }
+    
+    .phraseContainer h1{
+        font-size: 37px;
+    }
+
+    .stickerContainer{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-top: 8px;
+        gap: 10px;
+    }
+
+    .securePlataformContainer{
+        background-color: white;
+        display: flex;
+        width: 189px;
+        border-radius: 25px;
         align-items: center;
+        gap: 10px;
+        padding-left: 13px;
+        padding-right: 13px;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    .comunitySupportContainer{
+        background-color: white;
+        display: flex;
+        width: 189px;
+        border-radius: 25px;
+        align-items: center;
+        gap: 10px;
+        padding-left: 13px;
+        padding-right: 13px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    .animalsContainer{
+        width: 100%;
+        overflow: hidden;
+
+    }
+    .animalsContainer img{
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        transform: scale(1.2);
     }
 
     .visualWrapper {
@@ -447,7 +617,8 @@ input[type="text"]:focus {
     }
 
     .formRegister {
-        margin-top: 3%;
+        margin-top: 2%;
+        gap: 1%;
     }
 
     .buttonStyles {
@@ -520,11 +691,11 @@ input[type="text"]:focus {
 
     .login {
         display: flex;
-        width: 19%;
-        justify-content: flex-end;
+        width: 277px;
+        justify-content: center;
         align-items: center;
         gap: 10px;
-        margin-right: 35px;
+        font-size: 17px;
     }
 
     .containerUserSvg {
@@ -563,18 +734,120 @@ input[type="text"]:focus {
             "AboutSection FormContainer";
     }
 
+    .FormContainer {
+        max-width: 399px;
+    }
+
+    .logoContainer {
+        display: none;
+    }
+
+    .title {
+        display: none;
+    }
+    .forgotpasword{
+        text-decoration:underline;
+        font-size: 20px;
+    }
+
+    .description {
+        display: none;
+    }
+
+    .noaccount{
+        font-size: 17px;
+    }
+    .aboutus{
+        font-size: 17px;
+        margin-top: 10px;
+    }
+    .privacyText{
+        display: none;
+    }
+    .privacyContent {
+        margin-top: 5px;
+        width: 100%;
+    }
+    .containerData{
+        display: flex;
+        flex-direction: column;
+        gap: 19px;
+        flex: 1 1 auto;
+        margin-top: 8px;
+        color: #6B6A6A;
+    }
+    .backtoback {
+        display: block;
+        width: 100%;
+        margin-top: 58px;
+        margin-bottom: 17px;
+    }
+
+    .noaccount a{
+        color: #64C2CF;
+    }
+    .aboutus span{
+        color: #2b2b2b;
+    }
+    .backtoback h1 {
+        font-size: 38px;
+        font-weight: 600;
+    }
+
+    .backtoback h3 {
+        font-weight: 400;
+        color: #6B6A6A;
+        font-size: 21px;
+    }
+
+    .borderContainer {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        font-size: 23px;
+    }
+
+    .borderfix {
+        width: 44%;
+        border-bottom: 1px solid #B4B4B4;
+        height: 16px;
+    }
+
+    .signEmailContainer {
+        position: relative;
+    }
+
+    .signEmail{
+        font-size: 20px;
+        width: 352px;
+        height: 71px;
+        font-weight: 400;
+    }
+
+
+    .mailIcon {
+        position: absolute;
+        width: 20px;
+    }
+
+    .privacyContent img {
+        display: inline-block;
+    }
+
     .ContainerGridForm {
         align-items: flex-end;
     }
 
     .FormContainer {
         grid-area: FormContainer;
-        width: 100%;
-        height: 95%;
+        min-width: 459px;
         flex-grow: 1;
         margin-right: 58px;
-        min-height: 85%;
-
+        min-height: 80%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
     }
 
     .aboutSectionContainer {
@@ -583,8 +856,68 @@ input[type="text"]:focus {
         height: 100%;
         display: flex;
         flex-direction: column;
+        align-items: end;
         justify-content: center;
+    }
+
+    .aboutSectionContainerWrapper{
+        width: 86%;
+    }
+
+    .phraseContainer{
+        width: 100%;
+    }
+    
+    .phraseContainer h1{
+        font-size: 41px;
+    }
+
+    .stickerContainer{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        margin-top: 11px;
+        gap: 14px;
+    }
+
+    .securePlataformContainer{
+        background-color: white;
+        display: flex;
+        width: 189px;
+        border-radius: 25px;
         align-items: center;
+        gap: 10px;
+        padding-left: 13px;
+        padding-right: 13px;
+        font-weight: 500;
+        font-size: 14px;
+    }
+
+    .comunitySupportContainer{
+        background-color: white;
+        display: flex;
+        width: 189px;
+        border-radius: 25px;
+        align-items: center;
+        gap: 10px;
+        padding-left: 13px;
+        padding-right: 13px;
+        padding-top: 7px;
+        padding-bottom: 7px;
+        font-weight: 500;
+        font-size: 14px;
+    }
+    .animalsContainer{
+        width: 100%;
+        overflow: hidden;
+        margin-top: 11px;
+
+    }
+    .animalsContainer img{
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        transform: scale(1.2);
     }
 
     .visualWrapper {
@@ -598,12 +931,24 @@ input[type="text"]:focus {
         position: absolute;
         inset: 0;
         width: 100%;
+        transform: translateY(13px);
     }
 
     .imageWrapper img {
         width: 100%;
         height: 100%;
         object-fit: contain;
+    }
+
+    .titleCatContainer {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .accessAccount {
+        display: none;
     }
 
     .textWrapper {
@@ -645,6 +990,7 @@ input[type="text"]:focus {
         border-radius: 51px;
         display: flex;
         justify-content: space-between;
+        box-shadow: 0px 5px 31px rgba(0, 0, 0, .10);
     }
 
     .pugIconContainer {
@@ -652,6 +998,11 @@ input[type="text"]:focus {
         position: relative;
         top: 26px;
         transform: scale(1.4);
+
+    }
+
+    .catIconContainer {
+        display: none;
     }
 
     .title {
@@ -661,8 +1012,9 @@ input[type="text"]:focus {
     input[type="text"],
     input[type="email"],
     input[type="password"] {
+        min-height: 57px;
         width: 100%;
-        height: 61px;
+        height: 50px;
         padding: 10px;
         padding-top: 12px;
         border-radius: 20px;
@@ -682,7 +1034,8 @@ input[type="text"]:focus {
     }
 
     .formRegister {
-        margin-top: 3%;
+        margin-top: 4%;
+        gap: 1%;
     }
 
     .buttonStyles {
@@ -697,7 +1050,7 @@ input[type="text"]:focus {
     }
 
     .buttonStyles .buttons {
-        width: 282px;
+        width: 239px;
         height: 63%;
         border-radius: 20px;
     }
@@ -744,7 +1097,7 @@ input[type="text"]:focus {
         justify-content: center;
         gap: 27px;
         font-weight: 600;
-        font-size: clamp(0.9rem, 1.1rem, 2rem);
+        font-size: clamp(0.9rem, 1.2rem, 2rem);
     }
 
     .aboutContainerNav a {
@@ -754,12 +1107,16 @@ input[type="text"]:focus {
     }
 
     .login {
-        display: flex;
-        width: 19%;
-        justify-content: flex-end;
+                display: flex;
+        width: 277px;
+        justify-content: center;
         align-items: center;
         gap: 10px;
-        margin-right: 35px;
+        font-size: 17px;
+        font-size: 20px;
+        width: 345px;
+        height: 68px;
+        font-weight: 400;
     }
 
     .containerUserSvg {
@@ -774,11 +1131,6 @@ input[type="text"]:focus {
 
     .login h3 {
         font-weight: 600;
-    }
-
-    .privacyContent {
-        margin-top: 5px;
-        width: 100%;
     }
 
 }

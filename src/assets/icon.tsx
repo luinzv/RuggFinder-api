@@ -11,5 +11,8 @@ import userSvg from './userSvg.svg'
 import backgroundCathuman from './background-cathuman.png'
 import catSleepingIcon from './catsleepingIcon.png'
 import backgroundPet from './backgroundPet.png'
-export { pugqrIcon, mailIcon, userIcon, passwordIcon, checkboxIcon, humanpetIcon, petqrIcon, backgroundTheme, stampImage, userSvg, backgroundCathuman, catSleepingIcon, backgroundPet }
+import animalPortals from './animalsPortal.png'
+import secureIcon from './secureIcon.svg'
+import communityIcon from './communityIcon.svg'
+export { pugqrIcon, mailIcon, userIcon, passwordIcon, checkboxIcon, humanpetIcon, petqrIcon, backgroundTheme, stampImage, userSvg, backgroundCathuman, catSleepingIcon, backgroundPet, animalPortals, secureIcon, communityIcon }
   

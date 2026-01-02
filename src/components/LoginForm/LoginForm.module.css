@@ -257,7 +257,7 @@ input[type="text"]:focus {
         height: 95%;
         flex-grow: 1;
         margin-right: 58px;
-        max-height: 70%;
+        max-height: 83%;
     }
 
     .aboutSectionContainer {
